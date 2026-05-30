@@ -1,3 +1,4 @@
+shopt -s extglob
 cp -r !(.git) $DEPLOYPATH
 $ENV_ACTIVATE
 pip install -r requirements.txt
