@@ -4,5 +4,6 @@ $ENV_ACTIVATE
 pip install -r requirements.txt
 python manage.py migrate
 python manage.py collectstatic --noinput
+ls -a
 cd tmp
 touch restart.txt
