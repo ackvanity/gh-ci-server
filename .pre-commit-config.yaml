@@ -20,7 +20,7 @@ repos:
       - id: all-required
         name: All Required (Pip)
         description: Ensures all packages are in requirements.txt
-        entry: pip freeze > requirements.txt
+        entry: pip freeze > requirements.txt 
         language: system
         files: ''
         exclude: ^.*
