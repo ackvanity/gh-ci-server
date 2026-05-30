@@ -18,8 +18,10 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 import webhooks.urls
+from . import hello
 
 urlpatterns = [
+    path("/", hello.greet),
     path("admin/", admin.site.urls),
     path("webhooks/", include(webhooks.urls.urlpatterns)),
 ]
