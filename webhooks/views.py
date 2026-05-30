@@ -46,7 +46,10 @@ def webhook(request: HttpRequest, id: uuid.UUID):
                     script_env[var.name] = var.value
 
                 subprocess.run(
-                    [webhook.script], env=script_env, shell=True, cwd=webhook.path
+                    ["bash", webhook.script],
+                    env=script_env,
+                    shell=True,
+                    cwd=webhook.path,
                 )
             return HttpResponse("Deploy triggered")
         except Exception as e:
