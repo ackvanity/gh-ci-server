@@ -15,7 +15,6 @@ class Webhook(models.Model):
 
 
 class EnvVar(models.Model):
-    id = models.CharField(primary_key=True)
     webhook = models.ForeignKey(Webhook, on_delete=models.CASCADE)
     name = models.CharField()
     value = models.CharField()
