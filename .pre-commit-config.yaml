@@ -17,3 +17,11 @@ repos:
         files: ''
         exclude: ^.*
         always_run: true
+      - id: all-required
+        name: All Required (Pip)
+        description: Ensures all packages are in requirements.txt
+        entry: pip freeze > requirements.txt
+        language: system
+        files: ''
+        exclude: ^.*
+        always_run: true
