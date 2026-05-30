@@ -1,0 +1,19 @@
+# See https://pre-commit.com for more information
+# See https://pre-commit.com/hooks.html for more hooks
+
+repos:
+  - repo: https://github.com/psf/black-pre-commit-mirror
+    rev: 26.5.1
+    hooks:
+      - id: black
+        language_version: python3.10
+  - repo: local
+    hooks:
+      - id: django-all-migrated
+        name: All Migrated (Django)
+        description: Ensures all models have appropriate migrations created
+        entry: python manage.py makemigrations --check --dry-run
+        language: system
+        files: ''
+        exclude: ^.*
+        always_run: true

@@ -4,5 +4,5 @@ import sys
 
 sys.path.insert(0, os.path.dirname(__file__))
 
-wsgi = imp.load_source('wsgi', 'integration/wsgi.py')
+wsgi = imp.load_source("wsgi", "integration/wsgi.py")
 application = wsgi.app
