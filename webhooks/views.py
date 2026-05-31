@@ -46,6 +46,13 @@ def webhook(request: HttpRequest, id: uuid.UUID):
                     script_env[var.name] = var.value
 
                 subprocess.run(
+                    ["git", "pull"],
+                    env=script_env,
+                    shell=True,
+                    cwd=webhook.path,
+                )
+
+                subprocess.run(
                     ["bash", webhook.script],
                     env=script_env,
                     shell=True,
