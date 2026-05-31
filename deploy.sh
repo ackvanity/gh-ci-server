@@ -4,6 +4,7 @@ export ENV_ACTIVATE="source /home/hepivasi/virtualenv/projects/ci/3.10/bin/activ
 shopt -s extglob
 cp -r !(.git) $DEPLOYPATH
 $ENV_ACTIVATE
+cd $DEPLOYPATH
 pip install -r requirements.txt
 python manage.py migrate
 python manage.py collectstatic --noinput
